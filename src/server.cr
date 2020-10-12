@@ -2,14 +2,26 @@ require "grip"
 require "crinja"
 
 
-class ServerController < Grip::Controllers::Http
-  def get(context)
-    env = Crinja.new
-    env.loader = Crinja::Loader::FileSystemLoader.new("views/")
+class HTMLController < Grip::Controllers::Http
+  @tpl = Crinja.new
+
+  def initialize()
+    @tpl.loader = Crinja::Loader::FileSystemLoader.new("views/")
+  end
+
+  def render(context, template : String, hash : Hash | Nil = nil)
     context
-      .html(env.get_template("index.html").render({ "name" => "there" }))
+      .html(@tpl.get_template(template).render(hash))
   end
 end
+
+
+class ServerController < HTMLController
+  def get(context)
+    self.render(context, "index.html")
+  end
+end
+
 
 class Application < Grip::Application
   def initialize
