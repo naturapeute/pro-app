@@ -1,0 +1,30 @@
+version: 2.0
+shards:
+  bindata:
+    git: https://github.com/spider-gazelle/bindata.git
+    version: 1.7.0
+
+  crinja:
+    git: https://github.com/straight-shoota/crinja.git
+    version: 0.6.1
+
+  exception_page:
+    git: https://github.com/crystal-loot/exception_page.git
+    version: 0.1.4
+
+  grip:
+    git: https://github.com/grip-framework/grip.git
+    version: 1.1.1
+
+  jwt:
+    git: https://github.com/crystal-community/jwt.git
+    version: 1.4.2
+
+  openssl_ext:
+    git: https://github.com/stakach/openssl_ext.git
+    version: 1.2.2
+
+  radix:
+    git: https://github.com/luislavena/radix.git
+    version: 0.3.9
+

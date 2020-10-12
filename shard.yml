@@ -1,0 +1,19 @@
+name: naturapeute-app
+version: 0.1.0
+
+authors:
+  - Vincent Agnano <vinyll@protonmail.com>
+
+targets:
+  server:
+    main: src/server.cr
+
+crystal: 0.35.1
+
+dependencies:
+  grip:
+    github: grip-framework/grip
+  crinja:
+    github: straight-shoota/crinja
+
+license: cc-na-by-sa
